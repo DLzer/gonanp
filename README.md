@@ -1,5 +1,6 @@
 # GoNANP
 [![Go Report Card](https://goreportcard.com/badge/github.com/DLzer/gonanp)](https://goreportcard.com/report/github.com/DLzer/gonanp)
+[![Test](https://github.com/DLzer/gonanp/actions/workflows/test.yml/badge.svg)](https://github.com/DLzer/gonanp/actions/workflows/test.yml)
 
 Generate North American Numbering Plan compatible phone numbers ex `7725059292`
 
