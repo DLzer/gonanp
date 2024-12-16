@@ -18,4 +18,7 @@ func TestGenerateNanp(t *testing.T) {
 	for i := 0; i < 100; i++ {
 		assert.True(t, reg.MatchString(gonanp.GenerateNanp()))
 	}
+
+	invalid_nanp_number := "0000820123"
+	assert.False(t, reg.MatchString(invalid_nanp_number))
 }
