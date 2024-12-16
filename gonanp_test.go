@@ -9,6 +9,7 @@ import (
 )
 
 func TestGenerateNanp(t *testing.T) {
+	t.Parallel()
 	// Regex Asserts NANP
 	// Where NANP numbers are ten digits in length
 	// and they are in the format NXX-NXX-XXXX
@@ -21,4 +22,16 @@ func TestGenerateNanp(t *testing.T) {
 
 	invalidNanpNumber := "0000820123"
 	assert.False(t, reg.MatchString(invalidNanpNumber))
+}
+
+func TestValidateNanp(t *testing.T) {
+	t.Parallel()
+
+	for i := 0; i < 100; i++ {
+		nanp := gonanp.GenerateNanp()
+		assert.True(t, gonanp.ValidateNanp(nanp))
+	}
+
+	invalidNanpNumber := "0144797077"
+	assert.False(t, gonanp.ValidateNanp(invalidNanpNumber))
 }

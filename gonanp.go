@@ -11,11 +11,18 @@ package gonanp
 import (
 	"fmt"
 	"math/rand/v2"
+	"regexp"
 )
 
 // GenerateNanp returns a string containing a valid NANP phone number
 func GenerateNanp() string {
 	return fmt.Sprintf("%s%s%s", generateAreaCode(), generateOfficeCode(), generateLineNumber())
+}
+
+// ValidateNanp accepts a NANP phone number string and returns a bool for validity
+func ValidateNanp(n string) bool {
+	reg := regexp.MustCompile(`^\(?([2-9][0-8][0-9])\)?[-.●]?([2-9][0-9]{2})[-.●]?([0-9]{4})$`)
+	return reg.MatchString(n)
 }
 
 // generateAreaCode returns a string containing the NANP area code

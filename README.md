@@ -1,15 +1,24 @@
 # GoNANP
+[![Go Report Card](https://goreportcard.com/badge/github.com/DLzer/gonanp)](https://goreportcard.com/report/github.com/DLzer/gonanp)
 
 Generate North American Numbering Plan compatible phone numbers ex `7725059292`
 
 ## Install
-```
+```bash
 go get github.com/DLzer/gonanp
 ```
 
-## Usage
-```
+## Generator usage
+```go
 import "github.com/DLzer/gonanp
 
 number := gonanp.GenerateNanp()
+```
+
+## Validator usage
+```go
+import "github.com/DLzer/gonanp
+
+number := 7725059292
+isValid := gonanp.ValidateNanp(number)
 ```
